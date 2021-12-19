@@ -17,8 +17,8 @@
           class="org.springframework.jdbc.datasource.DriverManagerDataSource"
           p:driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
           p:url="jdbc:sqlserver://localhost:1433;database=BanVeTauHoa"
-          p:username="sa"
-          p:password="001142">
+          p:username=""
+          p:password="">
     </bean>
     <!-- Cấu hình Hibernate -->
     <bean id="sessionFactory"
@@ -27,10 +27,12 @@
         <property name="configLocation" value="classpath:hibernate.cfg.xml"/>
         <property name="hibernateProperties">
             <props>
-                <prop key="hibernate.connection.url">jdbc:sqlserver://localhost:1433;database=BanVeTauHoa</prop>
+                <!-- Server url -->
+                <prop key="hibernate.connection.url"></prop>
                 <prop key="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</prop>
-                <prop key="hibernate.connection.username">sa</prop>
-                <prop key="hibernate.connection.password">001142</prop>
+                <!-- Username - password -->
+                <prop key="hibernate.connection.username"></prop>
+                <prop key="hibernate.connection.password"></prop>
                 <prop key="hibernate.dialect">org.hibernate.dialect.SQLServer2012Dialect</prop>
                 <prop key="connection.pool_size">5</prop>
                 <prop key="hibernate.show_sql">true</prop>
@@ -51,8 +53,8 @@
           class="org.springframework.mail.javamail.JavaMailSenderImpl">
         <property name="host" value="smtp.gmail.com" />
         <property name="port" value="587" />
-        <property name="username" value="vetauhoa.cskh@gmail.com" />
-        <property name="password" value="tnbxshmvmpeuywya" />
+        <property name="username" value="" />
+        <property name="password" value="" />
         <property name="defaultEncoding" value="UTF-8"/>
         <property name="javaMailProperties">
             <props>
